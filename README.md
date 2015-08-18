@@ -9,5 +9,5 @@
 ###
 
 ```php
-$template = Notify\Email::send({to address}, {subject}, {body});
+$template = Notify\Send::email({to address}, {subject}, {body});
 ```
