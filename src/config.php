@@ -2,5 +2,5 @@
   namespace Notify;
   interface Config
   {
-    const dereferer = 'http://hideref.org/?';
+    const directory = dirname(FILE) . '/templates';
   }
