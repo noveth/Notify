@@ -8,23 +8,21 @@ class Email
 
   public static function send($to, $subject, $template, $vars)
   {
-      $template = self::get_template($template);
-      $new_template = self::set_template($template, $vars);
+      $template = self::get_template($template, $vars);
 
       if (!self::mail($to, $subject, $new_template)) {
-          header('HTTP/1.1 500 Internal Server Error');
-          header('Content-Type: '. $vars['content_type'] .'; charset=UTF-8');
-          die(json_encode(array('message' => 'ERROR', 'code' => 'NS0001', 'description' => 'Email could not be sent', 'data' => $from.' '.$to.' '.$subject.' '.$message)));
-          return;
+          throw new Exception("Email could not be sent", true);
+          return false;
       }
+      return true;
   }
 
-  public static function set_template($contents, $vars)
+  private static function set_template($contents, $vars)
   {
       $tags = []; $data = [];
       foreach($vars as $t => $d) {
-          array_push($tags, $t);
-          array_push($data, $d);
+          $tags[] = $t;
+          $data[] = $d;
       }
 
       $contents = str_replace($tags, $data, $contents);
@@ -33,7 +31,7 @@ class Email
       return $contents;
   }
 
-  public static function get_template($template)
+  private static function get_template($template, $vars)
   {
       if (!$template) {
         return false;
@@ -41,14 +39,12 @@ class Email
 
       $dir = dirname(FILE) . "/templates/" . $template;
       if (!file_exists($dir)) {
-          header('HTTP/1.1 500 Internal Server Error');
-          header('Content-Type: '. $vars['content_type'] .'; charset=UTF-8');
-          die(json_encode(array('message' => 'ERROR', 'code' => 'NS0001', 'description' => 'Cannot retrieved template')));
-          return;
+        throw new Exception("Specified template could not be found", true);
+        return false;
       }
 
       $contents = file_get_contents($dir);
-      return $contents;
+      return self::set_template($contents, $vars);
   }
 
 }
