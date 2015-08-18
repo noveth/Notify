@@ -5,7 +5,7 @@ use Notify\Config;
 
 class Email
 {
-
+  
   public static function send($to, $subject, $template, $vars)
   {
       $template = self::get_template($template, $vars);
