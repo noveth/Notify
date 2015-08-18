@@ -3,10 +3,10 @@ namespace Notify;
 
 use Notify\Config;
 
-class Send
+class Email
 {
 
-  public static function email($to, $subject, $template, $vars)
+  public static function send($to, $subject, $template, $vars)
   {
       $body = self::get_template($template);
 
