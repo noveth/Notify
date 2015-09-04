@@ -42,9 +42,9 @@ class Email
         return false;
       }
 
-      $dir = ROOTPATH. 'templates/' . $template;
+      $dir = Config::$DIRNAME . 'templates/' . $template;
       if (!file_exists($dir)) {
-        throw new Exception("Specified template could not be found", true);
+        throw new Exception("Specified template could not be found");
         return false;
       }
 
