@@ -6,7 +6,7 @@ use Notify\Config;
 class Email
 {
 
-  public static function send($to, $subject, $template, $vars)
+  public static function send($to, $subject, $template, $vars = null)
   {
       $template = self::get_template($template, $vars);
 
@@ -19,10 +19,12 @@ class Email
 
   private static function set_template($contents, $vars)
   {
-      $tags = []; $data = [];
-      foreach($vars as $t => $d) {
-          $tags[] = $t;
-          $data[] = $d;
+      if ($vars) {
+          $tags = []; $data = [];
+          foreach($vars as $t => $d) {
+              $tags[] = $t;
+              $data[] = $d;
+          }
       }
 
       $contents = str_replace($tags, $data, $contents);
