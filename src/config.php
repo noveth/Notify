@@ -1,8 +1,8 @@
 <?php
   namespace Notify;
-  
+
   interface Config
   {
-    const directory = ROOTPATH . '/templates';
+    const directory = dirname(__FILE__) . '/templates';
   }
 ?>
