@@ -7,13 +7,21 @@ class Email
 {
   public static function send($to, $subject, $template, $vars = null)
   {
+    $headers = '';
     $template = self::get_template($template, $vars);
 
     if ($template === false) {
       return false;
     }
 
-    if (!mail($to, $subject, $template)) {
+    $headers .= 'From:' . Config::$FROM . "\r\n";
+
+    if (Config::$ISHTML) {
+      $headers .= "MIME-Version: 1.0\r\n";
+      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    }
+
+    if (!mail($to, $subject, $template, $headers)) {
       throw new \Exception("Email could not be sent");
       return false;
     }
