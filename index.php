@@ -10,5 +10,8 @@ require_once dirname(__FILE__) . '/src/Notify.php';
         "{link}" => 'https://www.google.com.ph'
     ];
 
-    $template = Notify\Email::send('noveth2012@gmail.com', 'Sample Notification', 'fatjoe.text', $vars);
+    $template = Notify\Email::send('noveth2012@gmail.com', 'Sample Notification', 'fatjoe.html', $vars);
+    if ($template) {
+      echo "string";
+    }
 ?>
