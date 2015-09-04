@@ -10,7 +10,7 @@ class Email
   {
       $template = self::get_template($template, $vars);
 
-      if (!mail($to, $subject, $new_template)) {
+      if (!mail($to, $subject, $template)) {
           throw new Exception("Email could not be sent", true);
           return false;
       }
@@ -39,7 +39,7 @@ class Email
         return false;
       }
 
-      $dir = dirname(FILE) . "/templates/" . $template;
+      $dir = ROOTPATH. 'templates/' . $template;
       if (!file_exists($dir)) {
         throw new Exception("Specified template could not be found", true);
         return false;

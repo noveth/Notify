@@ -1,4 +1,6 @@
 <?php
+require_once dirname(__FILE__) . '/src/Notify.php';
+
    $vars = [
         "{client_name}" => 'Norvert john Abella',
         "{client_first_name}" => 'Norvert john',
