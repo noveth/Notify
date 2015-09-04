@@ -5,7 +5,6 @@ use Notify\Config;
 
 class Send
 {
-
   public static function email($to, $subject, $template, $vars)
   {
       $body = self::get_template($template);
@@ -42,5 +41,4 @@ class Send
       }
       return $contents;
   }
-
 }
