@@ -11,4 +11,4 @@ package { 'git':
   require => Exec['apt-get update'],
 }
 
-include nginx, php
+include nginx, php, mail
