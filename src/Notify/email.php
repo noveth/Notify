@@ -9,6 +9,10 @@ class Email
   {
       $template = self::get_template($template, $vars);
 
+      if ($template === false) {
+        return false;
+      }
+
       if (!mail($to, $subject, $template)) {
           throw new Exception("Email could not be sent", true);
           return false;
