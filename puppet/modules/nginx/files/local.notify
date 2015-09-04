@@ -1,0 +1,22 @@
+# vagrant/puppet/modules/nginx/files/127.0.0.1
+server {
+  listen 80;
+  server_name local.notify;
+  root /srv/www/public_html;
+  index index.php;
+
+    location ~* \.(ico|css|js|gif|jpe?g|png)(\?[0-9]+)?$ {
+        expires max;
+        log_not_found off;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php?/$request_uri;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+}
