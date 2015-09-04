@@ -5,7 +5,6 @@ use Notify\Config;
 
 class Email
 {
-
   public static function send($to, $subject, $template, $vars = null)
   {
       $template = self::get_template($template, $vars);
@@ -48,5 +47,4 @@ class Email
       $contents = file_get_contents($dir);
       return self::set_template($contents, $vars);
   }
-
 }
