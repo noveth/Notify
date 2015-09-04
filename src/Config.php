@@ -1,8 +1,10 @@
 <?php
   namespace Notify;
 
-  interface Config
+  class Config
   {
-    const directory = dirname(__FILE__) . '/templates';
+    public static $DIRNAME;
   }
+
+  Config::$DIRNAME = dirname(__FILE__);
 ?>
