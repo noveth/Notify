@@ -1,6 +1,5 @@
 <?php
 namespace Notify;
-
 use Notify\Config;
 
 class Email
