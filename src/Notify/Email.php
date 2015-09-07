@@ -1,4 +1,9 @@
 <?php
+/**
+ * Class Email
+ * @author Norvert John H. Abella <noveth2012@gmail.com>
+ */
+
 namespace Notify;
 
 use Notify\Config;

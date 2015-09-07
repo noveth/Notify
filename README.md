@@ -1,5 +1,10 @@
 # Notify
-Notification library
+Notification library [![Build Status][travis-image]][travis-url]]
+
+# Description
+
+A PHP Library that will be used for different kinds of notifications.
+This repo is still not finished.
 
 ## Requirements
 
