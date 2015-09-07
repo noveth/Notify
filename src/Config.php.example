@@ -1,12 +1,9 @@
 <?php
-  namespace Notify;
+namespace Notify;
 
-  class Config
-  {
-    public static $DIRNAME;
-    public static $FROM;
-  }
+Config::$EMAIL = true;
+Config::$SLACK = true;
 
-  Config::$DIRNAME = dirname(__FILE__);
-  Config::$FROM = 'example@example.co.uk';
+Config::$DIRNAME = dirname(__FILE__) . '/..';
+Config::$FROM = 'example@example.co.uk';
 ?>

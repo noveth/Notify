@@ -9,15 +9,16 @@ A PHP Library that will be used for sending notifications to multiple providers.
 ### Current
 
 * Email
+* Slack
 
 ### Planned
 
-* Slack
 * HipChat
 
 ## Requirements
 
-- PHP 5.4+
+* PHP 5.4+
+* CURL
 
 ## Usage
 
@@ -52,6 +53,31 @@ $template = 'user/registration.html';
 $replace = [
   'test tag' => 'test content'
 ];
+```
+
+### Slack
+
+Notifcations can also be sent to slack but it needs to be enabled in the config first.
+To use Slack notifications you need to setup a [webhook](http://slack.com/services/new/incoming-webhook) on your slack team settings first.
+
+Follow the Configuration step above and then add the following lines to your config:
+
+```php
+Config::$SLACKWEBHOOK = '{YOUR_ENDPOINT}';
+Config::$SLACKUSERNAME = '{NAME_OF_USER}';
+```
+
+Slack notifications are sent in a similar fashion to Emails but this only has 1 required parameter and 1 optional.
+
+```php
+bool Notify\Slack::send(string $message [, string $target]);
+```
+
+The second parameter can either be a room or a user, this is done by following the syntax below.
+
+```php
+$channel = '#channel';
+$user = '@user';
 ```
 
 -----
