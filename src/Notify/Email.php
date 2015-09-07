@@ -42,9 +42,9 @@ class Email
         $tags[] = $t;
         $data[] = $d;
       }
+      $contents = str_replace($tags, $data, $contents);
     }
 
-    $contents = str_replace($tags, $data, $contents);
     $contents = str_replace("\n.", "\n..", $contents);
 
     return $contents;
