@@ -1,7 +1,7 @@
 # Notify [![Build Status][travis-image]][travis-url]
 Notification library
 
-# Notify
+## Description
 A PHP Library that will be used for sending notifications to multiple providers.
 
 ##Implementations
