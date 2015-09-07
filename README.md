@@ -9,10 +9,10 @@ A PHP Library that will be used for sending notifications to multiple providers.
 ### Current
 
 * Email
+* Slack
 
 ### Planned
 
-* Slack
 * HipChat
 
 ## Requirements
