@@ -21,17 +21,21 @@ A PHP Library that will be used for sending notifications to multiple providers.
 
 ## Usage
 
+### Configuration
+
+There is a default configuration included and falls back to if no user configuration is found. To start using a custom configuration rename the Config.php.example to Config.php.
+
 ### Email
 
-To send an email using Notify
+Sending an email with Notify is incredibly simple, you pass 3 parameters and it will return true or false.
 
 ```php
 bool Notify\Email::send(string $to, string $subject, string $template [, array $replace ] );
 ```
 
-There are 4 paramaters used in the send method with the last being optional (depending on how you use the templates).
+There are 3 required parameters used in the send method with an optional 4th parameter if you use string replacement in your templates.
 
-Here is an example of the parameters
+Here is an example of the parameters:
 ```php
 // Target email address
 $to = 'example@example.com';
@@ -49,6 +53,7 @@ $replace = [
   'test tag' => 'test content'
 ];
 ```
+
 -----
 
 [travis-url]: https://travis-ci.org/noveth/Notify

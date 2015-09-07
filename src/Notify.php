@@ -2,6 +2,7 @@
 /**
 * Class Email
 * @author Norvert John H. Abella <noveth2012@gmail.com>
+* @author Luke Bickley <bickmista@gmail.com>
 */
 
 if (file_exists(dirname(__FILE__) . '/Config.php')) {
