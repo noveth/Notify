@@ -20,6 +20,26 @@ A PHP Library that will be used for sending notifications to multiple providers.
 * PHP 5.4+
 * CURL
 
+## Installation
+
+### Using Composer
+
+To install Notify with Composer, just add the following to your composer.json file:
+
+```json
+{
+    "require": {
+        "noveth/notify": "0.*"
+    }
+}
+```
+
+or by running the following command:
+
+```shell
+composer require noveth/notify
+```
+
 ## Usage
 
 ### Configuration
