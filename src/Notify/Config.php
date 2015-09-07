@@ -11,6 +11,6 @@ class Config
   public static $FROM;
 }
 
-Config::$DIRNAME = '/..' . dirname(__FILE__);
+Config::$DIRNAME = dirname(__FILE__, 1);
 Config::$FROM = 'example@example.co.uk';
 ?>
