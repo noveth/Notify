@@ -70,7 +70,14 @@ Config::$SLACKUSERNAME = '{NAME_OF_USER}';
 Slack notifications are sent in a similar fashion to Emails but this only has 1 required parameter and 1 optional.
 
 ```php
-bool Notify\Slack::send(string $message [, string $channel]);
+bool Notify\Slack::send(string $message [, string $target]);
+```
+
+The second parameter can either be a room or a user, this is done by following the syntax below.
+
+```php
+$channel = '#channel';
+$user = '@user';
 ```
 
 -----
