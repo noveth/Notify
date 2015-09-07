@@ -13,10 +13,10 @@ Class Slack
     }
 
     $payload['text'] = $message;
-    $payload['username'] = Config\$SLACKUSERNAME;
+    $payload['username'] = Config::$SLACKUSERNAME;
 
     // You can get your webhook endpoint from your Slack settings
-    $ch = curl_init(Config\$SLACKWEBHOOK);
+    $ch = curl_init(Config::$SLACKWEBHOOK);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, 'payload=' . json_encode($payload));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
