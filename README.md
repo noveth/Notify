@@ -42,7 +42,7 @@ $subject = 'An example email';
 // Template file name
 // You can tell Notify if its a html email or not depending on the file extension
 // .html files will automatically be sent as a html email
-$template = 'user/registration.html
+$template = 'user/registration.html';
 
 // If you use tags in your template this is where you pass what to replace them with
 $replace = [
