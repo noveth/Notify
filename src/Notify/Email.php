@@ -13,6 +13,7 @@ class Email
   public static function send($to, $subject, $template, $vars = null)
   {
     $headers = '';
+    $type = explode('.', $template);
     $template = self::get_template($template, $vars);
 
     if ($template === false) {
@@ -21,7 +22,7 @@ class Email
 
     $headers .= 'From:' . Config::$FROM . "\r\n";
 
-    if (Config::$ISHTML) {
+    if ($type[1] === 'html') {
       $headers .= "MIME-Version: 1.0\r\n";
       $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     }
