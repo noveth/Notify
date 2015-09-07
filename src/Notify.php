@@ -12,4 +12,4 @@ if (file_exists(dirname(__FILE__) . '/Config.php')) {
   require_once dirname(__FILE__) . '/Notify/Config.php';
 }
 
-require_once dirname(__FILE__) . '/Notify/Email.php';
+require_once dirname(__FILE__) . '/Notify/Loader.php';
