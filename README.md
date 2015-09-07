@@ -44,7 +44,7 @@ composer require noveth/notify
 
 ### Configuration
 
-There is a default configuration included and falls back to if no user configuration is found. To start using a custom configuration rename the Config.php.example to Config.php.
+There is a default configuration included and falls back to if no user configuration is found. To start using a custom configuration rename Config.php.example to Config.php.
 
 ### Email
 
@@ -77,27 +77,30 @@ $replace = [
 
 ### Slack
 
-Notifcations can also be sent to slack but it needs to be enabled in the config first.
+Notifications can also be sent to slack but requires a bit more setup than using email (dont worry its not too difficult).
 To use Slack notifications you need to setup a [webhook](http://slack.com/services/new/incoming-webhook) on your slack team settings first.
 
-Follow the Configuration step above and then add the following lines to your config:
+Follow the Configuration step above to start using a custom configuration and then add the following lines to your Config.php file.
 
 ```php
+// Replace {YOUR_ENDPOINT} with the webhook URL provided by slack.
 Config::$SLACKWEBHOOK = '{YOUR_ENDPOINT}';
+// Replace {NAME_OF_USER} with the user you want the message to be sent as (this can be anything).
 Config::$SLACKUSERNAME = '{NAME_OF_USER}';
 ```
 
-Slack notifications are sent in a similar fashion to Emails but this only has 1 required parameter and 1 optional.
+Slack notifications are sent in a similar fashion to Emails but only has 1 required parameter and 1 optional.
 
 ```php
 bool Notify\Slack::send(string $message [, string $target]);
 ```
 
 The second parameter can either be a room or a user, this is done by following the syntax below.
+If its not sent it will use the default room set in your webhook settings on slack.
 
 ```php
-$channel = '#channel';
-$user = '@user';
+$target = '#channel';
+$target = '@user';
 ```
 
 -----
