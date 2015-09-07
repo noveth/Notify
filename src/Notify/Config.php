@@ -17,7 +17,7 @@ class Config
 }
 
 Config::$EMAIL = true;
-Config::$SLACK = true;
+Config::$SLACK = false;
 
 Config::$DIRNAME = dirname(__FILE__) . '/..';
 Config::$FROM = 'example@example.co.uk';
