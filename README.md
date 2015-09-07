@@ -26,7 +26,7 @@ A PHP Library that will be used for sending notifications to multiple providers.
 To send an email using Notify
 
 ```php
-$template = Notify\Email::send($to, $subject, $template, $replace = null);
+bool Notify\Email::send(string $to, string $subject, string $template [, array $replace ] );
 ```
 
 There are 4 paramaters used in the send method with the last being optional (depending on how you use the templates).
