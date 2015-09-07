@@ -1,4 +1,4 @@
-# Notify [![Build Status][travis-image]][travis-url]]
+# Notify [![Build Status][travis-image][travis-url]]
 Notification library
 
 # Notify
