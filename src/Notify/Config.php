@@ -4,21 +4,22 @@ namespace Notify;
 class Config
 {
   // Modules
-  public static $EMAIL;
-  public static $SLACK;
+  public static $EMAIL = true;
+  public static $SLACK = false;
+
+  // General
+  public static $TEMPLATES;
 
   // Email
-  public static $DIRNAME;
   public static $FROM;
 
   // Slack
   public static $SLACKWEBHOOK;
   public static $SLACKUSERNAME;
+
+  public function __construct()
+  {
+    $this->$TEMPLATES = dirname(__FILE__) . '/..';
+  }
 }
-
-Config::$EMAIL = true;
-Config::$SLACK = false;
-
-Config::$DIRNAME = dirname(__FILE__) . '/..';
-Config::$FROM = 'example@example.co.uk';
 ?>
