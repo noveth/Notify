@@ -4,6 +4,6 @@ namespace Notify;
 Config::$EMAIL = true;
 Config::$SLACK = true;
 
-Config::$DIRNAME = dirname(__FILE__) . '/..';
+Config::$$TEMPLATES = dirname(__FILE__) . '/..';
 Config::$FROM = 'example@example.co.uk';
 ?>

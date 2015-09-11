@@ -50,7 +50,7 @@ class Email
       return false;
     }
 
-    $dir = Config::$DIRNAME . '/templates/' . $template;
+    $dir = Config::$TEMPLATES . '/templates/' . $template;
 
     if (!file_exists($dir)) {
       throw new \Exception("Specified template could not be found: " . $dir);
