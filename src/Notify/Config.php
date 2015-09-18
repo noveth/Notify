@@ -22,4 +22,3 @@ class Config
     $this->$TEMPLATES = dirname(__FILE__) . '/..';
   }
 }
-?>

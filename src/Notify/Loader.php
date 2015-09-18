@@ -8,4 +8,3 @@ if (Config::$EMAIL === true) {
 if (Config::$SLACK === true) {
   include(dirname(__FILE__) . '/Slack.php');
 }
-?>

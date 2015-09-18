@@ -16,12 +16,12 @@ Class Slack
     $payload['username'] = Config::$SLACKUSERNAME;
 
     // You can get your webhook endpoint from your Slack settings
-    $ch = curl_init(Config::$SLACKWEBHOOK);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-    curl_setopt($ch, CURLOPT_POSTFIELDS, 'payload=' . json_encode($payload));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
-    curl_close($ch);
+    $curl = curl_init(Config::$SLACKWEBHOOK);
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($curl, CURLOPT_POSTFIELDS, 'payload=' . json_encode($payload));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($curl);
+    curl_close($curl);
 
     if ($result === 'ok') {
       return true;
@@ -29,4 +29,3 @@ Class Slack
     return false;
   }
 }
-?>
